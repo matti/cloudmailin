@@ -37,7 +37,7 @@ type Headers struct {
 	ContentTransferEncoding string   `json:"content_transfer_encoding"`
 	XOriginatingIP          string   `json:"x_originating_ip"`
 	XDomainSigner           string   `json:"x_domain_signer"`
-	DkimSignature           string   `json:"dkim_signature"`
+	//DkimSignature           string   `json:"dkim_signature"`
 }
 
 // Headers contains all of the message headers extracted from the email.
@@ -99,7 +99,7 @@ func Decode(r io.Reader) (Data, error) {
 		ret.Headers.ContentTransferEncoding = tmp.Headers.ContentTransferEncoding
 		ret.Headers.XOriginatingIP = tmp.Headers.XOriginatingIP
 		ret.Headers.XDomainSigner = tmp.Headers.XDomainSigner
-		ret.Headers.DkimSignature = tmp.Headers.DkimSignature
+		//ret.Headers.DkimSignature = tmp.Headers.DkimSignature
 
 		return ret, nil
 	}
